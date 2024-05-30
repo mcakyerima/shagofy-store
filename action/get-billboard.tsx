@@ -11,7 +11,7 @@ const getBillboard = async (id: string): Promise<Billboard> => {
     });
 
     if (!response.ok) {
-        throw new Error('Failed to fetch categories');
+        throw new Error('Failed to fetch billboard');
     }
 
     return response.json();
