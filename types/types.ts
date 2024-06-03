@@ -30,7 +30,7 @@ export interface Size {
 
 export interface Color {
     id: string;
-    url: string
+    value: string
 }
 
 export interface Image {

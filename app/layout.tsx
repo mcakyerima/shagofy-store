@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import getCategories from "@/action/get-categories";
+import getCategories from "@/actions/get-categories";
 import { Category } from "@/types/types";
 import { Metadata } from "next";
 
@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   description: "Store",
 };
 
-const RootLayout = async ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   // Fetch categories server-side
   const categories: Category[] = await getCategories();
 

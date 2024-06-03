@@ -27,7 +27,7 @@ const Gallery: React.FC<GalleryProps> = ({
                                 src={image.url}
                                 fill
                                 alt="product image"
-                                className="object-cover object-center p-4"
+                                className="object-cover object-center p-4 rounded-xl"
                             />
                         </div>
                     </TabPanel>
