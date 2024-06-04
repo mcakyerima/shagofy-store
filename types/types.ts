@@ -30,7 +30,8 @@ export interface Size {
 
 export interface Color {
     id: string;
-    value: string
+    value: string;
+    name: string;
 }
 
 export interface Image {

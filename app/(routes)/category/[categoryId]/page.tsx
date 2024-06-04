@@ -6,8 +6,10 @@ import  getColors  from '@/actions/get-colors';
 import Container  from '@/components/ui/container';
 import Billboard from '@/components/billboard';
 import Filter from './components/filter';
+import ProductCard  from '@/components/ui/product-card';
 
 import  NoResults  from '@/components/ui/no-result';
+import MobileFilters from './components/mobile-filter';
 // disable caching
 export const revalidate = 0;
 
@@ -43,6 +45,11 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
                         {/* Mobile filters */}
+                        <MobileFilters
+                                sizes={sizes}
+                                colors={colors}
+                        />
+                        {/* Tablet and desktop filters */}
                         <div className="hidden lg:block">
                             <Filter
                                     valueKey="sizeId"
@@ -55,8 +62,15 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                                 data={colors}
                             />
                         </div>
-                        <div className="ml-6 lg:col-span-4 lg:mt-0 border">
+                        <div className="ml-6 lg:col-span-4 lg:mt-0">
                             { products?.length === 0 && <NoResults />}
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 ">
+                                {products?.map((item) => (
+                                    <ProductCard
+                                        data={item}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
