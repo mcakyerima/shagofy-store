@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ModalProvider from "@/provider/modal-provider";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import getCategories from "@/actions/get-categories";
@@ -20,6 +21,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body className={font.className}>
+        <ModalProvider/>
         <Navbar categories={categories} />
         {children}
         <Footer />
