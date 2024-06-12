@@ -4,6 +4,7 @@ import ModalProvider from "@/provider/modal-provider";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import getCategories from "@/actions/get-categories";
+import ToastProvider from "@/provider/toast-provider";
 import { Category } from "@/types/types";
 import { Metadata } from "next";
 
@@ -22,6 +23,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={font.className}>
         <ModalProvider/>
+        <ToastProvider/>
         <Navbar categories={categories} />
         {children}
         <Footer />

@@ -3,6 +3,7 @@ import { Transition,TransitionChild, Dialog, DialogPanel } from "@headlessui/rea
 import { Fragment } from "react";
 import IconButton from "./icon-button";
 import { X } from "lucide-react";
+
 interface ModalProps {
     open: boolean;
     onClose: () => void;
