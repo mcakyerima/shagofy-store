@@ -29,7 +29,7 @@ const CartItem: React.FC<CartItemProps> = ({
             </div>
             <div className="relative ml-4 flex flex-1 justify-between sm:ml-6">
                 <div className="absolute z-10 right-0 top-0">
-                    <IconButton onClick={() => console.log("Cart button clicked")} icon={<X/>}/>
+                    <IconButton onClick={() => console.log("Cart button clicked for submission")} icon={<X/>}/>
                 </div>
             </div>
         </li>
